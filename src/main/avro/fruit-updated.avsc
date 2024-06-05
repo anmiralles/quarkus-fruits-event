@@ -1,0 +1,15 @@
+{
+  "namespace": "me.amiralles.fruits.schema",
+  "type": "record",
+  "name": "FruitUpdated",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "itemId",
+      "type": "long"
+    }
+  ]
+}

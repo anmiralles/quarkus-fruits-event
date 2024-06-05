@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fruits-event-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: fruits
+    server: https://kubernetes.default.svc
+  project: fruits
+  source:
+    chart: fruits-event
+    repoURL: https://anmiralles.github.io/helm-charts/
+    targetRevision: 1.0.0
+    helm:
+      releaseName: fruits-event
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
